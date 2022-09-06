@@ -1,0 +1,425 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@200&display=swap");
+@import "./colors";
+@import "./_light-dark-theme.scss";
+@-webkit-keyframes show-card {
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes show-card {
+    to {
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes loader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes loader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    color:var(--textThemeColor1);
+    background-color:var(--bgThemeColor1) ;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    min-height: 100vh;
+    background-color: #f4f4f9;
+    color:var(--textThemeColor1)
+}
+
+header {
+    color: #f4f4f9;
+    background-color: #202020;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+header h1 {
+    font-family: "Source Sans Pro", sans-serif;
+    margin: 20px 0
+}
+
+main {
+    font-family: "Source Serif Pro", serif;
+    padding-bottom: 48px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+}
+
+main button > * {
+    pointer-events: none;
+}
+
+main .loader {
+    -webkit-animation: loader 1.1s infinite linear;
+    animation: loader 1.1s infinite linear;
+    border-top: 1.1em solid #202020;
+    border-right: 1.1em solid #202020;
+    border-bottom: 1.1em solid #202020;
+    border-left: 1.1em solid #f4f4f9;
+    border-radius: 50%;
+    font-size: 8px;
+    height: 10em;
+    margin: 60px auto;
+    position: relative;
+    text-indent: -9999em;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    width: 10em
+}
+
+main .loader:after {
+    border-radius: 50%;
+    height: 10em;
+    width: 10em
+}
+
+
+main .card-container {
+    -webkit-animation: show-card 1s ease forwards;
+    animation: show-card 1s ease forwards;
+    opacity: 0;
+    -ms-flex-item-align: center;
+    align-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-width: 930px;
+    width: 100%
+}
+
+main .card-container .movie-card {
+    -webkit-animation: show-card 1s ease forwards;
+    animation: show-card 1s ease forwards;
+    opacity: 0;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    width: 45%;
+    max-width: 190px;
+    margin: 8px
+}
+
+main .card-container .movie-card p {
+    position: absolute;
+    padding: 8px;
+    border-radius: 16px;
+    color: #f4f4f9;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 18px;
+    background-color: #202020;
+    right: 0;
+    -webkit-transform: translate(25%, -10%);
+    transform: translate(25%, -10%)
+}
+
+main .card-container .movie-card img {
+    width: 100%
+}
+
+main .card-container .movie-card button {
+    background-color: transparent;
+    border: none;
+    color: #f4f4f9;
+    font-family: "Source Sans Pro", sans-serif;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 18px
+}
+
+main .card-container .movie-card button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s
+}
+
+main .card-container .movie-card button:hover::before {
+    content: "View details"
+}
+
+main .card-container .movie-card .movie-poster-unavailable {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #454343;
+    color: #f4f4f9;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%
+}
+
+main .card-container .movie-card .movie-poster-unavailable h4 {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 24px;
+    text-align: center
+}
+
+main .card-container .movie-card .movie-poster-unavailable span {
+    font-size: 14px;
+    text-align: center
+}
+
+main .movie-details {
+    color: #f4f4f9;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+
+main .movie-details .details-card {
+    background-color: rgba(33, 33, 33, 0.9);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 80%;
+    max-height: 85vh;
+    max-width: 355px
+}
+
+main .movie-details .details-card img {
+    min-width: 75%;
+    width: 75%;
+    margin: 0 auto;
+    max-width: 255px;
+    height: 382px
+}
+
+main .movie-details .details-card .movie-poster-unavailable {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #454343;
+    color: #f4f4f9;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 382px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto
+}
+
+main .movie-details .details-card .movie-poster-unavailable h4 {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 24px;
+    text-align: center
+}
+
+main .movie-details .details-card .movie-poster-unavailable span {
+    font-size: 14px;
+    text-align: center
+}
+
+main .movie-details .details-card .details-article {
+    padding: 0 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    overflow: auto
+}
+
+main .movie-details .details-card .details-article h1 {
+    font-family: "Source Sans Pro", sans-serif;
+    text-align: center;
+    margin: 4px 0
+}
+
+main .movie-details .details-card .details-article h2 {
+    font-size: 20px;
+    margin: 8px 0
+}
+
+main .movie-details .details-card .details-article p {
+    font-size: 14px;
+    margin: 8px 0
+}
+
+main .movie-details .details-card .details-article button {
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    background-color: #f4f4f9;
+    border: none;
+    color: #202020;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 18px;
+    margin: 8px 0;
+    width: 30%;
+    border-radius: 8px
+}
+
+main .movie-details .details-card .details-article button:hover {
+    background-color: #454343;
+    color: #f4f4f9;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+@media screen and (min-width: 768px) {
+    main .discover-header .rating-search-container {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center
+    }
+
+    main .discover-header .rating-search-container .rating-btns {
+        margin: 16px 64px;
+        padding: 16px 32px;
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1
+    }
+
+    main .discover-header .rating-search-container form input {
+        padding: 18px 24px;
+        font-size: 20px
+    }
+
+    main .discover-header .rating-search-container form input::-webkit-input-placeholder {
+        font-size: 20px
+    }
+
+    main .discover-header .rating-search-container form input:-ms-input-placeholder {
+        font-size: 20px
+    }
+
+    main .discover-header .rating-search-container form input::-ms-input-placeholder {
+        font-size: 20px
+    }
+
+    main .discover-header .rating-search-container form input::placeholder {
+        font-size: 20px
+    }
+
+    main .discover-header .rating-search-container form button {
+        padding: 0 32px
+    }
+
+    main .card-container {
+        max-width: 1200px
+    }
+
+    main .card-container .movie-card {
+        max-width: 275px
+    }
+
+    main .movie-details .details-card {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        max-width: 700px;
+        max-height: 400px;
+        min-width: 562px;
+        width: 50%
+    }
+
+    main .movie-details .details-card img {
+        min-height: 400px;
+        min-width: 280px;
+        max-width: none;
+        width: 50%
+    }
+
+    main .movie-details .details-card .details-article {
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        min-width: 282px
+    }
+}
