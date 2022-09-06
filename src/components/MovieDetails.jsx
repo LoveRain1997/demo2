@@ -29,7 +29,7 @@ const client = create('http://127.0.0.1:5002/api/v0')
    try {
 
 
-    /*const response = await fetch(API_IMG + detail?.poster_path,{
+   const response = await fetch(API_IMG + detail?.poster_path,{
      method: 'GET',
      mode: 'no-cors',
     });
@@ -37,8 +37,8 @@ const client = create('http://127.0.0.1:5002/api/v0')
 
     const file = new File([blob], 'image.jpg', {type: blob.type});
     const added = await client.add(file)
-    console.log(added.path)*/
-    const tx = await  NFTContract.mint(params.id,detail?.title,'XXXXX')
+    console.log(added.path)
+    const tx = await  NFTContract.mint(params.id,detail?.title,added.path)
     const { transactionHash }= await tx.wait()
     setTransactionHash(transactionHash)
    }finally {
